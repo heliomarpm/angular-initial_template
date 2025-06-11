@@ -7,11 +7,10 @@ import { AsideComponent } from './shared/components/aside/aside.component';
 import { AsideService } from './shared/components/aside/aside.service';
 
 @Component({
-	selector: 'app-root',
-	standalone: true,
-	imports: [RouterOutlet, CommonModule, AsideComponent],
-	templateUrl: './app.component.html',
-	styleUrl: './app.component.scss',
+    selector: 'app-root',
+    imports: [RouterOutlet, CommonModule, AsideComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
 	public asideExpanded = this.asideService.expanded;

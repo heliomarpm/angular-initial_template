@@ -6,11 +6,10 @@ import { RouterModule } from '@angular/router';
 import { AsideService } from './aside.service';
 
 @Component({
-	selector: 'app-aside',
-	standalone: true,
-	imports: [RouterModule, CommonModule],
-	templateUrl: './aside.component.html',
-	styleUrl: './aside.component.scss',
+    selector: 'app-aside',
+    imports: [RouterModule, CommonModule],
+    templateUrl: './aside.component.html',
+    styleUrl: './aside.component.scss'
 })
 export class AsideComponent {
 	public expanded = this.asideService.expanded;
