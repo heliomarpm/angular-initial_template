@@ -1,10 +1,10 @@
-import { Component, HostListener, OnInit, signal } from '@angular/core';
+/* eslint-disable @typescript-eslint/member-ordering */
+import { Component, HostListener, inject, OnInit } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
-import { AsideComponent } from './shared/components/aside/aside.component';
-import { AsideService } from './shared/components/aside/aside.service';
+import { AsideComponent, AsideService } from './shared/components';
 
 @Component({
     selector: 'app-root',
@@ -13,10 +13,10 @@ import { AsideService } from './shared/components/aside/aside.service';
     styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-	public asideExpanded = this.asideService.expanded;
-	public screenWidth = signal<number>(window.innerWidth);
+  private asideService = inject(AsideService);
 
-	constructor(private asideService: AsideService) {}
+	public asideExpanded = this.asideService.expanded;
+	// public screenWidth = signal<number>(window.innerWidth);
 
 	@HostListener('window:resize')
 	onResize() {
