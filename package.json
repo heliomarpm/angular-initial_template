@@ -10,7 +10,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "clean": "rm -rf dist node_modules .angular"
   },
   "prettier": {
     "printWidth": 100,
