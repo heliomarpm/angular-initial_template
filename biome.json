@@ -31,7 +31,8 @@
         "recommended": true
       },
       "complexity": {
-        "noForEach": "off"
+        "noForEach": "off",
+        "noUselessConstructor": "error"
       },
       "correctness": {
         "noUnusedVariables": "error",
