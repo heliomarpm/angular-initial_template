@@ -1,53 +1,49 @@
 {
-  "name": "angular-initial-template",
+  "name": "my-app",
   "version": "0.0.0",
   "scripts": {
+    "check": "biome check",
+    "check:w": "biome check --write",
+    "lint": "biome lint --write",
+    "format": "biome format --write",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "test:ci": "ng test --no-watch --no-progress --browsers=ChromeHeadless",
-    "lint": "ng lint",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "format:check": "prettier --check \"src/**/*.ts\""
+    "test": "ng test"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
   },
   "private": true,
+  "packageManager": "npm@11.6.2",
   "dependencies": {
-    "@angular/animations": "^19.2.9",
-    "@angular/common": "^19.2.9",
-    "@angular/compiler": "^19.2.9",
-    "@angular/core": "^19.2.9",
-    "@angular/forms": "^19.2.9",
-    "@angular/platform-browser": "^19.2.9",
-    "@angular/platform-browser-dynamic": "^19.2.9",
-    "@angular/router": "^19.2.9",
+    "@angular/common": "^21.0.0",
+    "@angular/compiler": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "@angular/forms": "^21.0.0",
+    "@angular/platform-browser": "^21.0.0",
+    "@angular/router": "^21.0.0",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.15.1"
+    "stacktrace-js": "^2.0.2",
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^19.2.9",
-    "@angular-eslint/builder": "20.1.1",
-    "@angular-eslint/eslint-plugin": "20.1.1",
-    "@angular-eslint/eslint-plugin-template": "20.1.1",
-    "@angular-eslint/schematics": "20.1.1",
-    "@angular-eslint/template-parser": "20.1.1",
-    "@angular/cli": "^19.2.9",
-    "@angular/compiler-cli": "^19.2.9",
-    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@types/jasmine": "~5.1.0",
-    "@typescript-eslint/eslint-plugin": "^7.11.0",
-    "@typescript-eslint/parser": "7.11.0",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "jasmine-core": "~5.1.2",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "prettier": "3.3.3",
-    "typescript": "~5.8.3"
+    "@angular/build": "^21.0.0",
+    "@angular/cli": "^21.0.0",
+    "@angular/compiler-cli": "^21.0.0",
+    "@biomejs/biome": "^2.3.7",
+    "jsdom": "^27.1.0",
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.8"
   }
 }
