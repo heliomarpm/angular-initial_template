@@ -1,33 +1,28 @@
 <div class="sidenav" [ngClass]="expanded() ? '' : 'collapsed'">
 	<div class="logo-container">
+		@if (expanded()) {<div class="logo-text">AppName</div>}
 
-		@if (expanded()) {
-		<div class="logo-text">AppName</div>
-		}
-
-		<div id="menuAnimation" aria-hidden="true" (click)="toggleExpand()" (keyup.enter)="toggleExpand()"
-			class="menu-animation" [ngClass]="expanded() ? 'active' : ''" aria-label="Toggle sidenav">
+		<div
+			id="menuAnimation"
+			aria-hidden="true"
+			(click)="toggleExpand()"
+			(keyup.enter)="toggleExpand()"
+			class="menu-animation"
+			[ngClass]="expanded() ? 'active' : ''"
+			aria-label="Toggle sidenav">
 			<span></span>
 			<span></span>
 			<span></span>
 		</div>
-
 	</div>
 
 	<nav>
-		@for (item of items; track $index) {
-		@if (item.type === 'separator') {
-		<div class="nav-separator"></div>
-		} @else if (item.type === 'space') {
-		<div class="nav-space"></div>
-		} @else {
+		@for (item of items; track $index) { @if (item.type === 'separator') {<div class="nav-separator"></div>} @else if (item.type === 'space') {
+		<div class="nav-space"></div>} @else {
 		<li class="nav-item">
-			<a class="nav-item-link" [routerLink]="item.routeLink" routerLinkActive="active"
-				[routerLinkActiveOptions]="{ exact: true }">
+			<a class="nav-item-link" [routerLink]="item.routeLink" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
 				<i class="nav-item-link-icon" [class]="item.icon"></i>
-				@if (expanded()) {
-				<span class="nav-item-link-text">{{ item.label }}</span>
-				}
+				@if (expanded()) {<span class="nav-item-link-text">{{ item.label }}</span>}
 			</a>
 		</li>
 		} }

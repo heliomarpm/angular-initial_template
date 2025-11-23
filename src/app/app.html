@@ -1,0 +1,7 @@
+<app-aside />
+
+<div id="content">
+	<main id="main" [ngClass]="asideExpanded() ? '' : 'expanded'">
+		<router-outlet #outlet="outlet" />
+	</main>
+</div>
