@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/member-ordering */
 
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, inject, type OnInit } from '@angular/core';
+import { Component, HostListener, inject, type OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { AsideComponent, AsideService } from './shared/components';
@@ -10,6 +10,7 @@ import { AsideComponent, AsideService } from './shared/components';
   selector: 'app-root',
   imports: [RouterOutlet, CommonModule, AsideComponent],
   templateUrl: './app.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss',
 })
 export class App implements OnInit {
