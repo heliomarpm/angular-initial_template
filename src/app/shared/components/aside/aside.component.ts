@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { AsideService } from './aside.service';
@@ -8,6 +8,7 @@ import { AsideService } from './aside.service';
   selector: 'app-aside',
   imports: [RouterModule, CommonModule],
   templateUrl: './aside.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './aside.component.scss',
 })
 export class AsideComponent {
